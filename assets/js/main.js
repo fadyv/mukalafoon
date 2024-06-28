@@ -121,63 +121,6 @@ function isNumberKey(evt) {
 
 
 
-
-
-
-// phones plugin
-
-// function iti() {
-
-  
-// let input = document.querySelector("#phonee"),
-// errorMsg = document.querySelector("#error-msg1"),
-// validMsg = document.querySelector("#valid-msg1");
-
-// // initialize plugin
-// let iti = window.intlTelInput(input, {
-// preferredCountries: ["sa", "ae", "eg", "qa", "kw", "jo"],
-// separateDialCode: true,
-// utilsScript:
-//   "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.js",
-// });
-
-// // here, the index maps to the error code returned from getValidationError - see readme
-// let errorMap = [
-// "رقم الهاتف غير صحيح",
-// "رقم الدولة غير صحيح",
-// "رقم الهاتف غير صحيح",
-// "رقم الهاتف غير صحيح",
-// "رقم الهاتف غير صحيح",
-// ];
-
-// let reset = () => {
-// input.classList.remove("error");
-// errorMsg.innerHTML = "";
-// errorMsg.classList.add("hide");
-// errorMsg.classList.add("text-danger");
-// };
-
-// // on blur: validate
-// input.addEventListener("keyup", () => {
-// reset();
-// if (input.value.trim()) {
-//   if (iti.isValidNumber()) {
-//     validMsg.classList.remove("hide");
-//   } else {
-//     input.classList.add("error");
-//     let errorCode = iti.getValidationError();
-//     errorMsg.innerHTML = errorMap[errorCode];
-//     errorMsg.classList.remove("hide");
-//   }
-// }
-// });
-
-
-
-  
-  
-// }
-
 if ($(window).width() <= 1024) {  
   $('.dropdown-toggle').attr('data-bs-toggle','dropdown');
 
@@ -201,14 +144,48 @@ $(document).ready(function(){
   AOS.init();
 
 
-  if ( $('#download_image').length > 0   ){
+
+  loader()    
+
+
+
+  changeBackgroundSmoothly()
+
+
+});
+
+
+// Function to change background image smoothly
+function changeBackgroundSmoothly() {
+  const images = [
+    'url("assets/images/hero/photo.webp")',
+    'url("assets/images/hero/photo-1.webp")',
+    'url("assets/images/hero/photo-2.webp")',   
+    'url("assets/images/hero/photo-3.webp")'
+      // Add more image URLs as needed
+  ];
+
+  const heroSection =  document.querySelector('.hero-secion');
+
+  let currentIndex = 0 ;
+
+  function changeImage() {
+    console.log(0)
+
+      heroSection.style.transition = 'background 1s ease'; // Smooth transition
+      console.log(0)
+
+      heroSection.style.backgroundImage = images[currentIndex];
+    console.log(heroSection.style.backgroundImage )
+
+      currentIndex = (currentIndex + 1) % images.length; // Loop through images
+    console.log(2)
 
   }
 
 
 
-  loader()   
+  setInterval(changeImage, 5000); // Change image every 5 seconds
+}
 
- 
-});
 

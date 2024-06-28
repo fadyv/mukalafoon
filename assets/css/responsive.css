@@ -3,6 +3,19 @@
     .dropdown:hover .dropdown-menu {
         display: block;
     } 
+    /* .about-one{
+        height: 500px;
+    }
+    .about-two{
+        height: 440px;
+    } */
+
+
+    .page-header h1{
+        font-size: 30px ;
+    }
+
+   
 }
 
 @media all and (min-width: 991px) {
@@ -202,11 +215,8 @@
         font-size: 25px;
     }   
 
-    .bg-one{
-        border-bottom-left-radius: 13rem;
-
-    }
-
+ 
+    
 
 
     .blog-image{
@@ -278,7 +288,7 @@
         right: 0rem;
         width: 4rem;
 
-    }
+    }   
 
     .logopar {
         position: absolute;
@@ -406,8 +416,25 @@
 
 
 @media all and (max-width: 1024px)  {
-  
+    .bg-one {
+        background-size: cover;
+    }
     
+
+  .join-text  .text-white-50{
+        padding-left: 53px;
+        font-size: 12px;
+    }
+    .join-text .p-size-subtitle {
+        font-size: 16px;
+    }
+
+    .show-sm{
+        display: block !important;
+    }
+    .hidden-sm{
+        display: none !important;
+    }
 } 
 
 
